@@ -1,0 +1,45 @@
+name = "hostel-booking"
+main = "src/server/index.ts"
+compatibility_date = "2024-09-03"
+compatibility_flags = ["nodejs_compat"]
+
+[assets]
+directory = "./dist"
+binding = "ASSETS"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "hostel-booking-local"
+database_id = "local-d1-id"
+migrations_dir = "./migrations"
+
+[vars]
+NOTIFY_ENABLED = "false"
+
+[env.preview]
+[env.preview.assets]
+directory = "./dist"
+binding = "ASSETS"
+
+[[env.preview.d1_databases]]
+binding = "DB"
+database_name = "hostel-booking-preview"
+database_id = "preview-d1-id"
+migrations_dir = "./migrations"
+
+[env.preview.vars]
+NOTIFY_ENABLED = "true"
+
+[env.production]
+[env.production.assets]
+directory = "./dist"
+binding = "ASSETS"
+
+[[env.production.d1_databases]]
+binding = "DB"
+database_name = "hostel-booking-prod"
+database_id = "prod-d1-id"
+migrations_dir = "./migrations"
+
+[env.production.vars]
+NOTIFY_ENABLED = "true"

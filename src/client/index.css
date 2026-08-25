@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  "Ledger".
+
+  Ink on stone, hairline rules, tight radii — but colour earns its place rather
+  than being withheld. Violet is the app's own voice: actions, and slots that
+  are yours. Amber means in progress, rose means unavailable. Categories carry
+  their own hues so the catalogue is scannable by colour as well as by name.
+  Nothing is tinted purely to look nice.
+*/
+@layer base {
+  :root {
+    --color-background: #f4f3f7;
+    --color-foreground: #1b1a22;
+    --color-card: #ffffff;
+    --color-card-foreground: #1b1a22;
+    --color-border: #e3e1ea;
+    --color-rule: #cfccda;
+    --color-primary: #5a32c3;
+    --color-primary-foreground: #ffffff;
+    --color-accent: #b45309;
+    --color-accent-foreground: #ffffff;
+    --color-secondary: #eae7f1;
+    --color-muted: #efedf4;
+    --color-muted-foreground: #6a6579;
+
+    /* Settled — confirmed, approved, done. */
+    --color-free: #4a2ba4;
+    --color-free-bg: #ece7f8;
+    --color-free-border: #bda9e8;
+
+    /* Category hues. Six is enough for a hostel store room, and they are
+       distinguishable from one another in both themes. */
+    --cat-1: #5a32c3;
+    --cat-2: #b45309;
+    --cat-3: #be123c;
+    --cat-4: #0f766e;
+    --cat-5: #a21caf;
+    --cat-6: #3f6212;
+
+    /* In progress — requested, selected, awaiting a decision. */
+    --color-requested: #92400e;
+    --color-requested-bg: #fdf4e7;
+    --color-requested-border: #e0b378;
+
+    /* Unavailable — full, declined, blocked. */
+    --color-taken: #be123c;
+    --color-taken-bg: #fdf0f2;
+    --color-taken-border: #eda9b6;
+
+    --color-blackout: #6b6b73;
+    --color-blackout-bg: #eaeaec;
+    --color-blackout-border: #b9b9c0;
+  }
+
+  .dark {
+    --color-background: #101017;
+    --color-foreground: #f1f0f5;
+    --color-card: #191821;
+    --color-card-foreground: #f1f0f5;
+    --color-border: #2a2836;
+    --color-rule: #3b384c;
+    --color-primary: #a78bfa;
+    --color-primary-foreground: #16121f;
+    --color-accent: #f0b429;
+    --color-accent-foreground: #1b1a22;
+    --color-secondary: #221f2e;
+    --color-muted: #1c1a25;
+    --color-muted-foreground: #9d97ae;
+
+    --color-free: #c4b5fd;
+    --color-free-bg: #241d3a;
+    --color-free-border: #4b3d78;
+
+    --cat-1: #a78bfa;
+    --cat-2: #f0b429;
+    --cat-3: #fb7185;
+    --cat-4: #2dd4bf;
+    --cat-5: #e879f9;
+    --cat-6: #a3e635;
+
+    --color-requested: #f0b429;
+    --color-requested-bg: #2a2114;
+    --color-requested-border: #6b5220;
+
+    --color-taken: #fb7185;
+    --color-taken-bg: #2b1519;
+    --color-taken-border: #6d2f3b;
+
+    --color-blackout: #9a9aa3;
+    --color-blackout-bg: #1e1e22;
+    --color-blackout-border: #45454e;
+  }
+}
+
+@layer base {
+  /*
+    Everything downstream is sized in rem, so the whole interface steps up on a
+    larger screen instead of sitting at phone scale on a 15-inch laptop.
+  */
+  html {
+    font-size: 16.5px;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (min-width: 640px) {
+    html {
+      font-size: 17px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    html {
+      font-size: 18px;
+    }
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Tabular figures everywhere a number has to line up in a column. */
+  .font-mono {
+    font-variant-numeric: tabular-nums;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background: var(--color-primary);
+    color: var(--color-primary-foreground);
+  }
+}
+
+@layer components {
+  /*
+    Capacity pips — the signature. Copies of an item read as countable units in
+    a bin rather than a number, so a slot's state survives colourblindness and
+    a glance from arm's length. Square, because they are stock, not decoration.
+  */
+  .pip {
+    display: inline-block;
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 1px;
+    border: 1px solid currentColor;
+  }
+
+  .pip-free {
+    background: currentColor;
+  }
+
+  .pip-out {
+    background: transparent;
+    opacity: 0.35;
+  }
+
+  /* Micro-labels: mono, uppercase, tracked out. The only typographic flourish. */
+  .label-micro {
+    @apply font-mono text-[0.65rem] uppercase tracking-[0.12em] text-muted-foreground;
+  }
+}
+
+@layer utilities {
+  .scrollbar-none {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Clears the iOS home indicator under the fixed bottom bar. */
+  .pb-safe {
+    padding-bottom: calc(0.5rem + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+/* Diagonal hatch marks a slot physically unavailable — a second, non-colour
+   signal on top of the rose and grey fills. */
+.hatch-taken {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 5px,
+    var(--color-taken-border) 5px,
+    var(--color-taken-border) 6px
+  );
+}
+
+.hatch-blackout {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 5px,
+    var(--color-blackout-border) 5px,
+    var(--color-blackout-border) 6px
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

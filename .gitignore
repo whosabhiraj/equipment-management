@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.wrangler/
+
+# Secrets — never commit
+.dev.vars
+.env
+.env.*
+!.dev.vars.example
+
+# Roster data contains real names and emails
+data/roster.csv
+backups/
+*.sqlite
+*.sqlite3

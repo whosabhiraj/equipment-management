@@ -1,0 +1,21 @@
+# Copy this file to .dev.vars and fill in the values.
+# .dev.vars holds real secrets and must never be committed.
+
+# Better Auth Configurations
+BETTER_AUTH_URL=http://localhost:8787
+BETTER_AUTH_SECRET=generate_with_openssl_rand_hex_32
+
+# Vite dev server origin. Sign-in is started from :5173 but the Worker answers
+# on :8787, so :5173 has to be trusted. Leave unset in preview/production.
+TRUSTED_ORIGINS=http://localhost:5173
+
+# Google OAuth Credentials (Google Cloud Console > Credentials > OAuth client ID)
+GOOGLE_CLIENT_ID=your_client_id.apps.googleusercontent.com
+GOOGLE_CLIENT_SECRET=your_client_secret
+
+# Email Service
+RESEND_API_KEY=re_your_resend_api_key
+NOTIFY_ENABLED=false
+
+# Roster & Domain Constraints (Optional)
+# GOOGLE_WORKSPACE_DOMAIN=college.edu

@@ -1,0 +1,17 @@
+PRAGMA foreign_keys = ON;
+DELETE FROM bookings;
+DELETE FROM blackouts;
+DELETE FROM items;
+DELETE FROM categories;
+DELETE FROM sessions;
+DELETE FROM accounts;
+DELETE FROM users;
+INSERT INTO users (id, email, name, image, role, room_no, disabled, created_at, updated_at) VALUES ('usr_gy50e4rlv', 'f20250983@pilani.bits-pilani.ac.in', 'Abhiraj Pharate', NULL, 'resident', '3138', 0, 1787643860875, 1787643860875);
+INSERT INTO categories (id, name, sort_order) VALUES ('cat_1', 'Racquet Sports', 1);
+INSERT INTO categories (id, name, sort_order) VALUES ('cat_2', 'Board Games', 2);
+INSERT INTO categories (id, name, sort_order) VALUES ('cat_3', 'Field Sports', 3);
+INSERT INTO items (id, category_id, name, description, image_url, quantity, active, requires_approval, max_slots_per_booking, earliest_slot, latest_slot, advance_days, sort_order, created_at) VALUES ('itm_badminton', 'cat_1', 'Badminton Racquet', 'Yonex Carbonex carbon fibre racquet. Court shoes required.', NULL, 4, 1, 1, 2, 0, 17, 7, 1, 1787643860875);
+INSERT INTO items (id, category_id, name, description, image_url, quantity, active, requires_approval, max_slots_per_booking, earliest_slot, latest_slot, advance_days, sort_order, created_at) VALUES ('itm_tt', 'cat_1', 'Table Tennis Paddle', 'Stiga 3-star table tennis bat. Balls available at counter.', NULL, 6, 1, 0, 2, 0, 17, 7, 2, 1787643860875);
+INSERT INTO items (id, category_id, name, description, image_url, quantity, active, requires_approval, max_slots_per_booking, earliest_slot, latest_slot, advance_days, sort_order, created_at) VALUES ('itm_catan', 'cat_2', 'Catan (5th Edition)', 'Classic board game. 3-4 players. Contains all expansion pieces.', NULL, 2, 1, 0, 3, 0, 17, 7, 3, 1787643860875);
+INSERT INTO items (id, category_id, name, description, image_url, quantity, active, requires_approval, max_slots_per_booking, earliest_slot, latest_slot, advance_days, sort_order, created_at) VALUES ('itm_chess', 'cat_2', 'Chess Set', 'Standard wooden chess board with weighted pieces.', NULL, 5, 1, 0, 2, 0, 17, 7, 4, 1787643860875);
+INSERT INTO items (id, category_id, name, description, image_url, quantity, active, requires_approval, max_slots_per_booking, earliest_slot, latest_slot, advance_days, sort_order, created_at) VALUES ('itm_football', 'cat_3', 'Nivia Football', 'Size 5 training football. Return inflated.', NULL, 3, 1, 1, 2, 0, 17, 7, 5, 1787643860875);
