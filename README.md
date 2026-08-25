@@ -1,6 +1,6 @@
 # Hostel Sports & Games Booking Portal
 
-A high-performance booking portal for a college hostel's shared sports and games inventory. Built on a Single-Worker architecture (Hono API + Vite/React SPA) using Cloudflare Workers, D1 database, Drizzle ORM, Better Auth, and Resend.
+A high-performance booking portal for a college hostel's shared sports and games inventory. Built on a Single-Worker architecture (Hono API + Vite/React SPA) using Cloudflare Workers, D1 database, Drizzle ORM, Better Auth, and Resend
 
 ---
 
