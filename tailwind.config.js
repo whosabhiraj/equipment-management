@@ -42,6 +42,10 @@ export default {
         'taken-bg': 'var(--color-taken-bg)',
         'taken-border': 'var(--color-taken-border)',
 
+        danger: 'var(--color-danger)',
+        'danger-bg': 'var(--color-danger-bg)',
+        'danger-border': 'var(--color-danger-border)',
+
         blackout: 'var(--color-blackout)',
         'blackout-bg': 'var(--color-blackout-bg)',
         'blackout-border': 'var(--color-blackout-border)',

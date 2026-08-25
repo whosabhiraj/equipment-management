@@ -125,11 +125,11 @@ export default function PeopleImporter({ onSuccess }: { onSuccess: (count: numbe
           </div>
 
           {preview.errors.length > 0 && (
-            <div className="rounded-lg border border-taken-border bg-taken-bg p-2.5">
-              <p className="font-mono text-xs font-semibold uppercase tracking-wide text-taken">
+            <div className="rounded-lg border border-danger-border bg-danger-bg p-2.5">
+              <p className="font-mono text-xs font-semibold uppercase tracking-wide text-danger">
                 {preview.errors.length} line{preview.errors.length > 1 ? 's' : ''} could not be read
               </p>
-              <ul className="mt-1 space-y-0.5 font-mono text-xs text-taken/85">
+              <ul className="mt-1 space-y-0.5 font-mono text-xs text-danger/85">
                 {preview.errors.map((err, i) => (
                   <li key={i}>
                     {err.email ? `"${err.email}"` : 'empty line'} — {err.error}

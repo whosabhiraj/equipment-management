@@ -69,7 +69,7 @@ const TONES: Record<Tone, string> = {
   // should still be a problem, so this stays a fill rather than an outline.
   free: 'border-transparent bg-primary text-primary-foreground',
   requested: 'border-requested-border bg-requested-bg text-requested',
-  taken: 'border-taken-border bg-taken-bg text-taken',
+  taken: 'border-danger-border bg-danger-bg text-danger',
   accent: 'border-accent/40 bg-accent/10 text-accent',
 };
 
@@ -113,7 +113,7 @@ export function Notice({ tone, children }: { tone: 'free' | 'taken'; children: R
   const styles =
     tone === 'free'
       ? 'border-free-border bg-free-bg text-free'
-      : 'border-taken-border bg-taken-bg text-taken';
+      : 'border-danger-border bg-danger-bg text-danger';
   return (
     <p role="status" className={`rounded-lg border px-3 py-2 text-sm leading-snug ${styles}`}>
       {children}
@@ -128,7 +128,7 @@ const VARIANTS = {
   primary: 'bg-primary text-primary-foreground hover:opacity-85',
   brass: 'bg-accent text-accent-foreground hover:opacity-90',
   outline: 'border border-rule bg-card text-foreground hover:bg-secondary',
-  danger: 'border border-taken-border bg-taken-bg text-taken hover:opacity-85',
+  danger: 'border border-danger-border bg-danger-bg text-danger hover:opacity-85',
   quiet: 'text-muted-foreground hover:text-foreground hover:bg-secondary',
 } as const;
 

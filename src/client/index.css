@@ -5,96 +5,105 @@
 @tailwind utilities;
 
 /*
-  "Ledger".
+  "Claret".
 
-  Ink on stone, hairline rules, tight radii — but colour earns its place rather
-  than being withheld. Violet is the app's own voice: actions, and slots that
-  are yours. Amber means in progress, rose means unavailable. Categories carry
-  their own hues so the catalogue is scannable by colour as well as by name.
-  Nothing is tinted purely to look nice.
+  Near-white paper, warm greys, and a single wine red that is the app's own
+  voice — actions, and slots that are yours. Ochre marks anything in progress.
+  Unavailable is stone plus a hatch rather than a second red, so nothing in the
+  grid competes with the brand. True red is rare on purpose: it appears only on
+  errors and destructive actions, which is what makes it register.
 */
 @layer base {
   :root {
-    --color-background: #f4f3f7;
-    --color-foreground: #1b1a22;
+    --color-background: #f7f5f4;
+    --color-foreground: #1c1a19;
     --color-card: #ffffff;
-    --color-card-foreground: #1b1a22;
-    --color-border: #e3e1ea;
-    --color-rule: #cfccda;
-    --color-primary: #5a32c3;
+    --color-card-foreground: #1c1a19;
+    --color-border: #e8e4e1;
+    --color-rule: #d7d2ce;
+    --color-primary: #8c3a4a;
     --color-primary-foreground: #ffffff;
-    --color-accent: #b45309;
+    --color-accent: #96650f;
     --color-accent-foreground: #ffffff;
-    --color-secondary: #eae7f1;
-    --color-muted: #efedf4;
-    --color-muted-foreground: #6a6579;
+    --color-secondary: #f0ebe9;
+    --color-muted: #f3efed;
+    --color-muted-foreground: #6c635e;
 
-    /* Settled — confirmed, approved, done. */
-    --color-free: #4a2ba4;
-    --color-free-bg: #ece7f8;
-    --color-free-border: #bda9e8;
-
-    /* Category hues. Six is enough for a hostel store room, and they are
-       distinguishable from one another in both themes. */
-    --cat-1: #5a32c3;
-    --cat-2: #b45309;
-    --cat-3: #be123c;
-    --cat-4: #0f766e;
-    --cat-5: #a21caf;
-    --cat-6: #3f6212;
+    /* Settled — confirmed, approved, yours. */
+    --color-free: #8c3a4a;
+    --color-free-bg: #f8edef;
+    --color-free-border: #ddb3bb;
 
     /* In progress — requested, selected, awaiting a decision. */
-    --color-requested: #92400e;
-    --color-requested-bg: #fdf4e7;
-    --color-requested-border: #e0b378;
+    --color-requested: #8a5c0d;
+    --color-requested-bg: #fcf4e6;
+    --color-requested-border: #e0c48d;
 
-    /* Unavailable — full, declined, blocked. */
-    --color-taken: #be123c;
-    --color-taken-bg: #fdf0f2;
-    --color-taken-border: #eda9b6;
+    /* Unavailable — full, past, out of hours. Stone, never a second red. */
+    --color-taken: #57534e;
+    --color-taken-bg: #edeae7;
+    --color-taken-border: #b8b1aa;
 
-    --color-blackout: #6b6b73;
-    --color-blackout-bg: #eaeaec;
-    --color-blackout-border: #b9b9c0;
+    /* Closed by a rep. */
+    --color-blackout: #6c635e;
+    --color-blackout-bg: #efece9;
+    --color-blackout-border: #c0b8b1;
+
+    /* Errors and destructive actions only. */
+    --color-danger: #b42318;
+    --color-danger-bg: #fdf0ee;
+    --color-danger-border: #eeb3aa;
+
+    /* Category hues, muted to sit alongside the claret rather than shout. */
+    --cat-1: #8c3a4a;
+    --cat-2: #96650f;
+    --cat-3: #4f6b52;
+    --cat-4: #45635e;
+    --cat-5: #6b4b7a;
+    --cat-6: #7a5a3c;
   }
 
   .dark {
-    --color-background: #101017;
-    --color-foreground: #f1f0f5;
-    --color-card: #191821;
-    --color-card-foreground: #f1f0f5;
-    --color-border: #2a2836;
-    --color-rule: #3b384c;
-    --color-primary: #a78bfa;
-    --color-primary-foreground: #16121f;
-    --color-accent: #f0b429;
-    --color-accent-foreground: #1b1a22;
-    --color-secondary: #221f2e;
-    --color-muted: #1c1a25;
-    --color-muted-foreground: #9d97ae;
+    --color-background: #141211;
+    --color-foreground: #f2efed;
+    --color-card: #1c1917;
+    --color-card-foreground: #f2efed;
+    --color-border: #2c2724;
+    --color-rule: #3d3733;
+    --color-primary: #d98a97;
+    --color-primary-foreground: #2a1216;
+    --color-accent: #e0a83c;
+    --color-accent-foreground: #221a09;
+    --color-secondary: #262120;
+    --color-muted: #1e1a19;
+    --color-muted-foreground: #a49a94;
 
-    --color-free: #c4b5fd;
-    --color-free-bg: #241d3a;
-    --color-free-border: #4b3d78;
+    --color-free: #e0a0ab;
+    --color-free-bg: #2e1a1e;
+    --color-free-border: #5f333b;
 
-    --cat-1: #a78bfa;
-    --cat-2: #f0b429;
-    --cat-3: #fb7185;
-    --cat-4: #2dd4bf;
-    --cat-5: #e879f9;
-    --cat-6: #a3e635;
+    --color-requested: #e0a83c;
+    --color-requested-bg: #2c2415;
+    --color-requested-border: #6b5622;
 
-    --color-requested: #f0b429;
-    --color-requested-bg: #2a2114;
-    --color-requested-border: #6b5220;
+    --color-taken: #a49a94;
+    --color-taken-bg: #262120;
+    --color-taken-border: #4a423e;
 
-    --color-taken: #fb7185;
-    --color-taken-bg: #2b1519;
-    --color-taken-border: #6d2f3b;
+    --color-blackout: #a49a94;
+    --color-blackout-bg: #221e1c;
+    --color-blackout-border: #453d39;
 
-    --color-blackout: #9a9aa3;
-    --color-blackout-bg: #1e1e22;
-    --color-blackout-border: #45454e;
+    --color-danger: #f77066;
+    --color-danger-bg: #2d1714;
+    --color-danger-border: #6d3129;
+
+    --cat-1: #d98a97;
+    --cat-2: #e0a83c;
+    --cat-3: #8fb896;
+    --cat-4: #7fb0a8;
+    --cat-5: #b48fc4;
+    --cat-6: #c9a37e;
   }
 }
 

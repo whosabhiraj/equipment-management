@@ -1,6 +1,5 @@
 import ThemeToggle from '../components/ThemeToggle';
 import Footer from '../components/Footer';
-import Contacts from '../components/Contacts';
 import { Pips } from '../components/ui';
 
 /**
@@ -79,7 +78,7 @@ export default function Landing({ onSignIn, isSigningIn, error }: LandingProps) 
             <p className="label-micro">Sports &amp; games inventory</p>
 
             <h1 className="mt-3 font-display text-[2.4rem] font-semibold leading-[1.03] tracking-[-0.03em] sm:text-[3.25rem]">
-              Every racquet,
+              All equipment,
               <br />
               hour by hour.
             </h1>
@@ -109,8 +108,8 @@ export default function Landing({ onSignIn, isSigningIn, error }: LandingProps) 
               </button>
 
               <p className="text-xs leading-relaxed text-muted-foreground">
-                Use your college account. Only people who have been added to the hostel
-                can sign in — if yours does not work, contact the admin.
+                Use your college account. Only people from Ram Bhavan
+                can sign in — if yours does not work, contact HSR.
               </p>
             </div>
           </div>
@@ -143,7 +142,6 @@ export default function Landing({ onSignIn, isSigningIn, error }: LandingProps) 
             </div>
           </div>
         </div>
-        <Contacts className="mt-12 border-t border-border pt-8 lg:mt-16" />
       </main>
 
       <Footer />
