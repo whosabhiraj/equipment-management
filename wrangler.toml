@@ -1,4 +1,4 @@
-name = "hostel-booking"
+name = "ram-sport-inventory"
 main = "src/server/index.ts"
 compatibility_date = "2024-09-03"
 compatibility_flags = ["nodejs_compat"]

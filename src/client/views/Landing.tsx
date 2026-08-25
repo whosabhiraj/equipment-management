@@ -1,5 +1,4 @@
 import ThemeToggle from '../components/ThemeToggle';
-import Footer from '../components/Footer';
 import { Pips } from '../components/ui';
 
 /**
@@ -155,8 +154,6 @@ export default function Landing({ onSignIn, isSigningIn, error }: LandingProps) 
           </div>
         </div>
       </main>
-
-      <Footer />
     </div>
   );
 }

@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { CalendarCheck, ClipboardList, LogOut, Settings2 } from 'lucide-react';
 import ThemeToggle from './components/ThemeToggle';
-import Footer from './components/Footer';
 import Contacts from './components/Contacts';
 import Landing from './views/Landing';
 import BrowseView from './views/BrowseView';
@@ -174,8 +173,6 @@ export default function App() {
         )}
         <Contacts className="mt-10 border-t border-border pt-6" />
       </main>
-
-      <Footer />
 
       {/* Clears the fixed bottom bar. A margin utility would collide with the
           sm: override, so the space is an element. */}
